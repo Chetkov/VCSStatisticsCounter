@@ -104,7 +104,7 @@ class TotalStatistic implements Statistics
      * @param int $limit
      * @param string $sortType
      * @param string $sortDirection
-     * @return array
+     * @return Statistics[]
      */
     public function getTopAuthors(
         int $limit = 3,
@@ -118,7 +118,7 @@ class TotalStatistic implements Statistics
      * @param int $limit
      * @param string $sortType
      * @param string $sortDirection
-     * @return array
+     * @return Statistics[]
      */
     public function getTopRepositories(
         int $limit = 3,
