@@ -71,7 +71,7 @@ class GitLogsRepository implements LogsRepository
     private function getBranchesForCheck(): array
     {
         if (!$this->branchesForCheck) {
-//            $this->execute('git fetch --all');
+            $this->commandExecutor->execute('git fetch --all');
             $remoteBranches = $this->commandExecutor->execute('git branch -a -r');
             foreach ($remoteBranches as $remoteBranch) {
                 $remoteBranch = trim($remoteBranch);
