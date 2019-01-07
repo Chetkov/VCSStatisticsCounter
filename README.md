@@ -1,0 +1,2 @@
+# VCSStatisticsCounter
+Счетчик статистик VCS
