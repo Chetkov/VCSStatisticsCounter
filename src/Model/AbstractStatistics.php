@@ -6,40 +6,40 @@ namespace VCSStatisticsCounter\Model;
  * Class AbstractStatistics
  * @package VCSStatisticsCounter\Model
  */
-abstract class AbstractStatistics
+abstract class AbstractStatistics implements Statistics
 {
     /** @var static[] */
     private static $instances;
 
     /** @var string */
-    private $uniqueKey;
+    private $name;
 
     /**
      * FactoryMethod constructor.
-     * @param string $uniqueKey
+     * @param string $name
      */
-    protected function __construct(string $uniqueKey)
+    protected function __construct(string $name)
     {
-        $this->uniqueKey = $uniqueKey;
+        $this->name = $name;
     }
 
     /**
-     * @param string $uniqueKey
+     * @param string $name
      * @return static
      */
-    public static function getByUniqueKey(string $uniqueKey)
+    public static function getByName(string $name)
     {
-        if (!isset(self::$instances[$uniqueKey])) {
-            self::$instances[$uniqueKey] = new static($uniqueKey);
+        if (!isset(self::$instances[$name])) {
+            self::$instances[$name] = new static($name);
         }
-        return self::$instances[$uniqueKey];
+        return self::$instances[$name];
     }
 
     /**
      * @return string
      */
-    public function getUniqueKey(): string
+    public function getName(): string
     {
-        return $this->uniqueKey;
+        return $this->name;
     }
 }

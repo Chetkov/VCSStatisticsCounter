@@ -6,7 +6,7 @@ namespace VCSStatisticsCounter\Model;
  * Class AuthorStatistics
  * @package VCSStatisticsCounter\Model
  */
-class AuthorStatistics extends AbstractStatistics implements Statistics
+class AuthorStatistics extends AbstractStatistics
 {
     /** @var StatisticsCollection|RepositoryStatistics[] */
     private $repositoriesStatistics;

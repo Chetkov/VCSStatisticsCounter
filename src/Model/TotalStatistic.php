@@ -45,6 +45,14 @@ class TotalStatistic implements Statistics
     }
 
     /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return 'TotalStatistic';
+    }
+
+    /**
      * @return int
      */
     public function getNumChangedLines(): int

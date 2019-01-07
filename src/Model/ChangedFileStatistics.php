@@ -33,7 +33,7 @@ class ChangedFileStatistics implements Statistics
     /**
      * @return string
      */
-    public function getChangedFile(): string
+    public function getName(): string
     {
         return $this->changedFile;
     }

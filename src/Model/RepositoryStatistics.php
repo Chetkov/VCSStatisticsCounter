@@ -6,7 +6,7 @@ namespace VCSStatisticsCounter\Model;
  * Class RepositoryStatistics
  * @package VCSStatisticsCounter\Model
  */
-class RepositoryStatistics extends AbstractStatistics implements Statistics
+class RepositoryStatistics extends AbstractStatistics
 {
     /** @var StatisticsCollection|ChangedFileStatistics[] */
     private $changedFilesStatistics;
@@ -74,7 +74,7 @@ class RepositoryStatistics extends AbstractStatistics implements Statistics
     {
         $uniqueChangedFiles = [];
         foreach ($this->changedFilesStatistics as $changedFileStatistics) {
-            $uniqueChangedFiles[$changedFileStatistics->getChangedFile()] = true;
+            $uniqueChangedFiles[$changedFileStatistics->getName()] = true;
         }
         return count($uniqueChangedFiles);
     }

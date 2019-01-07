@@ -17,6 +17,11 @@ interface Statistics
     public const SORT_DIRECTION_DESC = 'DESC';
 
     /**
+     * @return string
+     */
+    public function getName(): string;
+
+    /**
      * @return int
      */
     public function getNumChangedLines(): int;

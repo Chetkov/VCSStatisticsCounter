@@ -41,10 +41,10 @@ class VCSStatisticsCounter
         foreach ($this->config->getVcsRootDirectories() as $directory) {
             $this->logsRepository->setDirectory($directory);
 
-            $repositoryTotals = RepositoryStatistics::getByUniqueKey($directory);
+            $repositoryTotals = RepositoryStatistics::getByName($directory);
             foreach ($this->config->getAuthors() as $author) {
-                $authorTotals = AuthorStatistics::getByUniqueKey($author);
-                $authorRepositoryTotals = RepositoryStatistics::getByUniqueKey("$author:$directory");
+                $authorTotals = AuthorStatistics::getByName($author);
+                $authorRepositoryTotals = RepositoryStatistics::getByName("$author:$directory");
 
                 $changedFileLogs = $this->logsRepository->getLogs($author, $startDateTime);
                 foreach ($changedFileLogs as $changedFileLog) {
