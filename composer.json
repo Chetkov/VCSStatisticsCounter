@@ -1,0 +1,19 @@
+{
+    "name": "v.chetkov/vcs-statistics-counter",
+    "description": "Счетчик статистик VCS",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Валерий Четков",
+            "email": "chetkov.valeriy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "VCSStatisticsCounter\\": "src/"
+        }
+    }
+}
