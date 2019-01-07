@@ -46,6 +46,39 @@ $vcsStatisticsCounter = $vcsStatisticsCounterFactory->create(require __DIR__ . '
 
 $totalStatistic = $vcsStatisticsCounter->getTotalStatistic(new DateTime('2018-11-28'));
 
+$topAuthorsByNumChangedLines = $totalStatistic->getTopAuthors(3, Statistics::TYPE_CHANGED_LINES);
+foreach ($topAuthorsByNumChangedLines as $authorStatistics) {
+    echo "\n{$authorStatistics->getName()}:\n";
+    echo "изменённых файлов - {$authorStatistics->getNumChangedFiles()}\n";
+    echo "изменённых строк - {$authorStatistics->getNumChangedLines()}\n";
+    echo "удалённых строк - {$authorStatistics->getNumCreatedLines()}\n";
+    echo "новых строк - {$authorStatistics->getNumDeletedLines()}\n";
+}
+```
+
+Вывод:
+```text
+a.lisyanskij:
+изменённых файлов - 417
+изменённых строк - 21664
+удалённых строк - 18007
+новых строк - 3657
+
+Валерий Четков:
+изменённых файлов - 178
+изменённых строк - 10383
+удалённых строк - 7017
+новых строк - 3366
+
+Mike Malofeev:
+изменённых файлов - 94
+изменённых строк - 7781
+удалённых строк - 2923
+новых строк - 4858
+```
+
+Еще варианты:
+```
 //==================== ТОПЫ АВТОРОВ ====================
 
 //ТОП-3 авторов по кол-ву измененных строк
