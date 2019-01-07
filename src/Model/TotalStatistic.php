@@ -103,28 +103,30 @@ class TotalStatistic implements Statistics
     /**
      * @param int $limit
      * @param string $sortType
-     * @param string $sortDirection
+     * @param bool $isSortDirectionDESC
      * @return Statistics[]
+     * @throws \RuntimeException
      */
     public function getTopAuthors(
         int $limit = 3,
-        string $sortType = Statistics::SORT_TYPE_CHANGED_LINES,
-        string $sortDirection = Statistics::SORT_DIRECTION_DESC
+        string $sortType = Statistics::TYPE_CHANGED_LINES,
+        bool $isSortDirectionDESC = true
     ): array {
-        return $this->authorsStatistics->getSorted($sortType, $sortDirection)->slice($limit)->toArray();
+        return $this->authorsStatistics->getSorted($sortType, $isSortDirectionDESC)->slice($limit)->toArray();
     }
 
     /**
      * @param int $limit
      * @param string $sortType
-     * @param string $sortDirection
+     * @param bool $isSortDirectionDESC
      * @return Statistics[]
+     * @throws \RuntimeException
      */
     public function getTopRepositories(
         int $limit = 3,
-        string $sortType = Statistics::SORT_TYPE_CHANGED_LINES,
-        string $sortDirection = Statistics::SORT_DIRECTION_DESC
+        string $sortType = Statistics::TYPE_CHANGED_LINES,
+        bool $isSortDirectionDESC = true
     ): array {
-        return $this->repositoriesStatistics->getSorted($sortType, $sortDirection)->slice($limit)->toArray();
+        return $this->repositoriesStatistics->getSorted($sortType, $isSortDirectionDESC)->slice($limit)->toArray();
     }
 }

@@ -65,30 +65,30 @@ class StatisticsCollection implements \Iterator
 
     /**
      * @param string $sortType
-     * @param string $sortDirection
+     * @param bool $isSortDirectionDESC
      * @return StatisticsCollection
      * @throws \RuntimeException
      */
     public function getSorted(
-        string $sortType = Statistics::SORT_TYPE_CHANGED_LINES,
-        string $sortDirection = Statistics::SORT_DIRECTION_DESC
+        string $sortType = Statistics::TYPE_CHANGED_LINES,
+        bool $isSortDirectionDESC = true
     ): self {
         $statisticsList = $this->statisticsList;
-        uasort($statisticsList, function (Statistics $a, Statistics $b) use ($sortType, $sortDirection) {
+        uasort($statisticsList, function (Statistics $a, Statistics $b) use ($sortType, $isSortDirectionDESC) {
             switch ($sortType) {
-                case Statistics::SORT_TYPE_CHANGED_LINES:
+                case Statistics::TYPE_CHANGED_LINES:
                     $aResult = $a->getNumChangedLines();
                     $bResult = $b->getNumChangedLines();
                     break;
-                case Statistics::SORT_TYPE_CREATED_LINES:
+                case Statistics::TYPE_CREATED_LINES:
                     $aResult = $a->getNumCreatedLines();
                     $bResult = $b->getNumCreatedLines();
                     break;
-                case Statistics::SORT_TYPE_DELETED_LINES:
+                case Statistics::TYPE_DELETED_LINES:
                     $aResult = $a->getNumDeletedLines();
                     $bResult = $b->getNumDeletedLines();
                     break;
-                case Statistics::SORT_TYPE_CHANGED_FILES:
+                case Statistics::TYPE_CHANGED_FILES:
                     $aResult = $a->getNumChangedFiles();
                     $bResult = $b->getNumChangedFiles();
                     break;
@@ -97,7 +97,7 @@ class StatisticsCollection implements \Iterator
             }
 
             $result = $aResult < $bResult ? -1 : 1;
-            if ($sortDirection === Statistics::SORT_DIRECTION_DESC) {
+            if ($isSortDirectionDESC) {
                 $result *= -1;
             }
 
