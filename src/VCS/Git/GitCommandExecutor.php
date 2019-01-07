@@ -1,12 +1,12 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS\Git;
+namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
-use VCSStatisticsCounter\VCS\CommandExecutor;
+use Chetkov\VCSStatisticsCounter\VCS\CommandExecutor;
 
 /**
  * Class GitCommandExecutor
- * @package VCSStatisticsCounter\VCS\Git
+ * @package Chetkov\VCSStatisticsCounter\VCS\Git
  */
 class GitCommandExecutor implements CommandExecutor
 {

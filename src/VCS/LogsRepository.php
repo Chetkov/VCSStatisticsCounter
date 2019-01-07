@@ -1,12 +1,12 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS;
+namespace Chetkov\VCSStatisticsCounter\VCS;
 
-use VCSStatisticsCounter\Model\ChangedFileStatistics;
+use Chetkov\VCSStatisticsCounter\Model\ChangedFileStatistics;
 
 /**
  * Interface LogsRepository
- * @package VCSStatisticsCounter\VCS
+ * @package Chetkov\VCSStatisticsCounter\VCS
  */
 interface LogsRepository extends SettableDirectory
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\Model;
+namespace Chetkov\VCSStatisticsCounter\Model;
 
 /**
  * Class ChangedFileStatistics
- * @package VCSStatisticsCounter\Model
+ * @package Chetkov\VCSStatisticsCounter\Model
  */
 class ChangedFileStatistics implements Statistics
 {
@@ -18,7 +18,7 @@ class ChangedFileStatistics implements Statistics
     private $numDeletedLines;
 
     /**
-     * Log constructor.
+     * ChangedFileStatistics constructor.
      * @param string $changedFile
      * @param int $numCreatedLines
      * @param int $numDeletedLines

@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter;
+namespace Chetkov\VCSStatisticsCounter;
 
 /**
  * Class VCSStatisticsCounterConfig
- * @package VCSStatisticsCounter
+ * @package Chetkov\VCSStatisticsCounter
  */
 class VCSStatisticsCounterConfig
 {
@@ -15,7 +15,7 @@ class VCSStatisticsCounterConfig
     private $authors;
 
     /**
-     * Config constructor.
+     * VCSStatisticsCounterConfig constructor.
      * @param string[] $vcsRootDirectories
      * @param string[] $authors
      */

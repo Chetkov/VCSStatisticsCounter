@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\Model;
+namespace Chetkov\VCSStatisticsCounter\Model;
 
 /**
  * Class AbstractStatistics
- * @package VCSStatisticsCounter\Model
+ * @package Chetkov\VCSStatisticsCounter\Model
  */
 abstract class AbstractStatistics implements Statistics
 {
@@ -15,7 +15,7 @@ abstract class AbstractStatistics implements Statistics
     private $name;
 
     /**
-     * FactoryMethod constructor.
+     * AbstractStatistics constructor.
      * @param string $name
      */
     protected function __construct(string $name)

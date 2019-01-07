@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\Model;
+namespace Chetkov\VCSStatisticsCounter\Model;
 
 /**
  * Class StatisticsCollection
- * @package VCSStatisticsCounter\Model
+ * @package Chetkov\VCSStatisticsCounter\Model
  */
 class StatisticsCollection implements \Iterator
 {

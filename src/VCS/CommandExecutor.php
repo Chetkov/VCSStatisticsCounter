@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS;
+namespace Chetkov\VCSStatisticsCounter\VCS;
 
 /**
  * Interface CommandExecutor
- * @package VCSStatisticsCounter\VCS
+ * @package Chetkov\VCSStatisticsCounter\VCS
  */
 interface CommandExecutor extends SettableDirectory
 {

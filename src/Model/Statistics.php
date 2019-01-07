@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\Model;
+namespace Chetkov\VCSStatisticsCounter\Model;
 
 /**
  * Interface Statistics
- * @package VCSStatisticsCounter\Model
+ * @package Chetkov\VCSStatisticsCounter\Model
  */
 interface Statistics
 {

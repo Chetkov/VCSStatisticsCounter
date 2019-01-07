@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS\Git;
+namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
 /**
  * Class GitLogsRepositoryConfig
- * @package VCSStatisticsCounter\VCS\Git
+ * @package Chetkov\VCSStatisticsCounter\VCS\Git
  */
 class GitLogsRepositoryConfig
 {
@@ -15,7 +15,7 @@ class GitLogsRepositoryConfig
     private $branchPrefixes;
 
     /**
-     * Config constructor.
+     * GitLogsRepositoryConfig constructor.
      * @param string $serverName
      * @param string[] $branchPrefixes
      */

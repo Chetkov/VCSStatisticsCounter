@@ -1,15 +1,15 @@
 <?php
 
-namespace VCSStatisticsCounter;
+namespace Chetkov\VCSStatisticsCounter;
 
-use VCSStatisticsCounter\Model\AuthorStatistics;
-use VCSStatisticsCounter\Model\RepositoryStatistics;
-use VCSStatisticsCounter\Model\TotalStatistic;
-use VCSStatisticsCounter\VCS\LogsRepository;
+use Chetkov\VCSStatisticsCounter\Model\AuthorStatistics;
+use Chetkov\VCSStatisticsCounter\Model\RepositoryStatistics;
+use Chetkov\VCSStatisticsCounter\Model\TotalStatistic;
+use Chetkov\VCSStatisticsCounter\VCS\LogsRepository;
 
 /**
  * Class VCSStatisticsCounter
- * @package VCSStatisticsCounter
+ * @package Chetkov\VCSStatisticsCounter
  */
 class VCSStatisticsCounter
 {
@@ -20,7 +20,7 @@ class VCSStatisticsCounter
     private $config;
 
     /**
-     * VCSTotalCounter constructor.
+     * VCSStatisticsCounter constructor.
      * @param LogsRepository $logsRepository
      * @param VCSStatisticsCounterConfig $config
      */

@@ -1,7 +1,7 @@
 <?php
 
-use VCSStatisticsCounter\Model\Statistics;
-use VCSStatisticsCounter\VCSStatisticsCounterFactory;
+use Chetkov\VCSStatisticsCounter\Model\Statistics;
+use Chetkov\VCSStatisticsCounter\VCSStatisticsCounterFactory;
 
 require_once 'vendor/autoload.php';
 

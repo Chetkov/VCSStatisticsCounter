@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\Model;
+namespace Chetkov\VCSStatisticsCounter\Model;
 
 /**
  * Class AuthorStatistics
- * @package VCSStatisticsCounter\Model
+ * @package Chetkov\VCSStatisticsCounter\Model
  */
 class AuthorStatistics extends AbstractStatistics
 {
@@ -14,6 +14,7 @@ class AuthorStatistics extends AbstractStatistics
     /**
      * AuthorStatistics constructor.
      * @param string $author
+     * @throws \RuntimeException
      */
     protected function __construct(string $author)
     {

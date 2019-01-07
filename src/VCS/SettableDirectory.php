@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS;
+namespace Chetkov\VCSStatisticsCounter\VCS;
 
 /**
  * Interface SettableDirectory
- * @package VCSStatisticsCounter\VCS
+ * @package Chetkov\VCSStatisticsCounter\VCS
  */
 interface SettableDirectory
 {

@@ -24,7 +24,7 @@ return [
         'to-',
     ],
     'rootDirectories' => [
-        '/home/v.chetkov/projects/VCSStatisticsCounter/',
+        'Chetkov\VCSStatisticsCounter',
         '/home/v.chetkov/projects/Extractor/',
         '/home/v.chetkov/projects/Logger/',
     ],

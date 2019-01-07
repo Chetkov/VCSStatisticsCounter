@@ -1,13 +1,13 @@
 <?php
 
-namespace VCSStatisticsCounter;
+namespace Chetkov\VCSStatisticsCounter;
 
-use VCSStatisticsCounter\VCS\Git\GitLogsRepositoryFactory;
-use VCSStatisticsCounter\VCS\LogsRepository;
+use Chetkov\VCSStatisticsCounter\VCS\Git\GitLogsRepositoryFactory;
+use Chetkov\VCSStatisticsCounter\VCS\LogsRepository;
 
 /**
  * Class VCSStatisticsCounterFactory
- * @package VCSStatisticsCounter
+ * @package Chetkov\VCSStatisticsCounter
  */
 class VCSStatisticsCounterFactory
 {

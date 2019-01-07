@@ -1,10 +1,10 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS\Git;
+namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
 /**
  * Class GitLogsRepositoryFactory
- * @package VCSStatisticsCounter\VCS\Git
+ * @package Chetkov\VCSStatisticsCounter\VCS\Git
  */
 class GitLogsRepositoryFactory
 {

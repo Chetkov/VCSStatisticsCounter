@@ -1,14 +1,14 @@
 <?php
 
-namespace VCSStatisticsCounter\VCS\Git;
+namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
-use VCSStatisticsCounter\Model\ChangedFileStatistics;
-use VCSStatisticsCounter\VCS\CommandExecutor;
-use VCSStatisticsCounter\VCS\LogsRepository;
+use Chetkov\VCSStatisticsCounter\Model\ChangedFileStatistics;
+use Chetkov\VCSStatisticsCounter\VCS\CommandExecutor;
+use Chetkov\VCSStatisticsCounter\VCS\LogsRepository;
 
 /**
  * Class GitLogsRepository
- * @package VCSStatisticsCounter\VCS\Git
+ * @package Chetkov\VCSStatisticsCounter\VCS\Git
  */
 class GitLogsRepository implements LogsRepository
 {
