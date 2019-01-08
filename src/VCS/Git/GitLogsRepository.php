@@ -3,6 +3,7 @@
 namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
 use Chetkov\VCSStatisticsCounter\Model\ChangedFileStatistics;
+use Chetkov\VCSStatisticsCounter\VCS\BranchFilterStrategy;
 use Chetkov\VCSStatisticsCounter\VCS\CommandExecutor;
 use Chetkov\VCSStatisticsCounter\VCS\LogsRepository;
 
@@ -15,21 +16,18 @@ class GitLogsRepository implements LogsRepository
     /** @var CommandExecutor */
     private $commandExecutor;
 
-    /** @var GitLogsRepositoryConfig */
-    private $config;
-
-    /** @var string[] */
-    private $branchesForCheck;
+    /** @var BranchFilterStrategy */
+    private $branchesFilter;
 
     /**
      * GitLogsRepository constructor.
      * @param CommandExecutor $commandExecutor
-     * @param GitLogsRepositoryConfig $config
+     * @param BranchFilterStrategy $branchesFilter
      */
-    public function __construct(CommandExecutor $commandExecutor, GitLogsRepositoryConfig $config)
+    public function __construct(CommandExecutor $commandExecutor, BranchFilterStrategy $branchesFilter)
     {
         $this->commandExecutor = $commandExecutor;
-        $this->config = $config;
+        $this->branchesFilter = $branchesFilter;
     }
 
     /**
@@ -37,8 +35,8 @@ class GitLogsRepository implements LogsRepository
      */
     public function setDirectory(string $directory): void
     {
-        $this->branchesForCheck = null;
         $this->commandExecutor->setDirectory($directory);
+        $this->branchesFilter->setDirectory($directory);
     }
 
     /**
@@ -50,7 +48,7 @@ class GitLogsRepository implements LogsRepository
     {
         $rows = $this->commandExecutor->execute(
             'git log ' .
-            implode(' ', $this->getBranchesForCheck()) .
+            implode(' ', $this->branchesFilter->getFilteredBranches()) .
             ' --no-merges' .
             ' --pretty=tformat: --numstat' .
             " --after='{$startDateTime->format('Y-m-d H:i:s')}'" .
@@ -63,25 +61,5 @@ class GitLogsRepository implements LogsRepository
         }
 
         return $changedFileLogs;
-    }
-
-    /**
-     * @return string[]
-     */
-    private function getBranchesForCheck(): array
-    {
-        if (!$this->branchesForCheck) {
-            $this->commandExecutor->execute('git fetch --all');
-            $remoteBranches = $this->commandExecutor->execute('git branch -a -r');
-            foreach ($remoteBranches as $remoteBranch) {
-                $remoteBranch = trim($remoteBranch);
-                foreach ($this->config->getBranchPrefixes() as $branchPrefix) {
-                    if (strpos($remoteBranch, $this->config->getServerName() . DIRECTORY_SEPARATOR . $branchPrefix) === 0) {
-                        $this->branchesForCheck[] = $remoteBranch;
-                    }
-                }
-            }
-        }
-        return $this->branchesForCheck;
     }
 }

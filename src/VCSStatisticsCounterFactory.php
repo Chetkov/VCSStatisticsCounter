@@ -30,7 +30,7 @@ class VCSStatisticsCounterFactory
     private function createLogsRepository(array $config): LogsRepository
     {
         if (!isset($config['vcs'])) {
-            throw new \RuntimeException('Required parameter [vcs] is not set in config');
+            throw new \RuntimeException("Required parameter 'vcs' is not set in config");
         }
 
         switch ($config['vcs']) {

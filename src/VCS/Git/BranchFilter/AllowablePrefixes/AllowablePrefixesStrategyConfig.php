@@ -1,12 +1,12 @@
 <?php
 
-namespace Chetkov\VCSStatisticsCounter\VCS\Git;
+namespace Chetkov\VCSStatisticsCounter\VCS\Git\BranchFilter\AllowablePrefixes;
 
 /**
- * Class GitLogsRepositoryConfig
- * @package Chetkov\VCSStatisticsCounter\VCS\Git
+ * Class AllowablePrefixesStrategyConfig
+ * @package Chetkov\VCSStatisticsCounter\VCS\Git\BranchFilter\AllowablePrefixes
  */
-class GitLogsRepositoryConfig
+class AllowablePrefixesStrategyConfig
 {
     /** @var string */
     private $serverName;
@@ -15,7 +15,7 @@ class GitLogsRepositoryConfig
     private $branchPrefixes;
 
     /**
-     * GitLogsRepositoryConfig constructor.
+     * AllowablePrefixesStrategyConfig constructor.
      * @param string $serverName
      * @param string[] $branchPrefixes
      */
