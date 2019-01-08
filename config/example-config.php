@@ -3,7 +3,10 @@
 return [
     'vcs' => 'git',
     'authors' => [],
-    'branchPrefixes' => [],
+    'branchFilter' => [
+        'strategy' => '',
+        'branchPrefixes' => [],
+        'vcsRemoteServerName' => 'origin',
+    ],
     'rootDirectories' => [],
-    'vcsRemoteServerName' => 'origin',
 ];

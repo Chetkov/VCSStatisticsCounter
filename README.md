@@ -12,6 +12,8 @@ composer require "v.chetkov/vcs-statistics-counter:^1.0"
 ```php
 <?php
 
+use Chetkov\VCSStatisticsCounter\VCS\Git\BranchFilter\AllowablePrefixes\AllowablePrefixesStrategy;
+
 return [
     'vcs' => 'git',
     'authors' => [
@@ -20,15 +22,18 @@ return [
         'Nikolia Zubrov',
         'Dmitriy Ignatenko',
     ],
-    'branchPrefixes' => [
-        'to-',
+    'branchFilter' => [
+        'strategy' => AllowablePrefixesStrategy::class,
+        'branchPrefixes' => [
+            'to-',
+        ],
+        'vcsRemoteServerName' => 'origin',
     ],
     'rootDirectories' => [
-        'Chetkov\VCSStatisticsCounter',
+        '/home/v.chetkov/projects/VCSStatisticsCounter/',
         '/home/v.chetkov/projects/Extractor/',
         '/home/v.chetkov/projects/Logger/',
     ],
-    'vcsRemoteServerName' => 'origin',
 ];
 ```
 

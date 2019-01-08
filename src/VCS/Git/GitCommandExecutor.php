@@ -2,6 +2,7 @@
 
 namespace Chetkov\VCSStatisticsCounter\VCS\Git;
 
+use Chetkov\VCSStatisticsCounter\Helper\Singleton;
 use Chetkov\VCSStatisticsCounter\VCS\CommandExecutor;
 
 /**
@@ -10,6 +11,8 @@ use Chetkov\VCSStatisticsCounter\VCS\CommandExecutor;
  */
 class GitCommandExecutor implements CommandExecutor
 {
+    use Singleton;
+
     /** @var string */
     private $directory;
 
